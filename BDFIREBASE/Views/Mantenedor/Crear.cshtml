@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "Crear";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h5>Crear contacto</h5>
+    </div>
+    <div class="panel-body">
+        <form action="@Url.Action("Crear","Mantenedor")" method="post">
+            <div class="form-row">
+                <div class="form-group col-md-5">
+                    <label>Nombres</label>
+                    <input class="form-control is-valid" type="text" name="Nombres" required/>
+                </div>
+                <div class="form-group col-md-5">
+                    <label>Apellido Paterno</label>
+                    <input class="form-control is-valid" type="text" name="apellidoPaterno" required />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-5">
+                    <label>Apellido Materno</label>
+                    <input class="form-control is-valid" type="text" name="apellidoMaterno"  required />
+                </div>
+                <div class="form-group col-md-5">
+                    <label>Ciudad</label>
+                    <input class="form-control is-valid" type="text" name="Ciudad"  required/>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-5">
+                    <label>Correo</label>
+                    <input class="form-control is-valid" type="text" name="Correo"  required />
+                </div>
+                <div class="form-group col-md-5">
+                    <label>Telefono</label>
+                    <input class="form-control is-valid" type="text" name="Telefono" required />
+                </div>
+            </div>
+            <hr />
+            <div class="form-row">
+                <div class="form-group col-md-5">
+                    <button type="submit" class="btn btn-primary">Registrar</button>
+                </div>
+                <div class="form-group col-md-5">
+                    <a class="btn btn-danger" href="@Url.Action("Inicio","Mantenedor")">Volver</a>
+                </div>
+            </div>
+        </form>
+
+
+    </div>
+</div>
+
+

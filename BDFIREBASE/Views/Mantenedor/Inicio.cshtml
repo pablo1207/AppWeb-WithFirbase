@@ -1,0 +1,50 @@
+﻿@model IEnumerable<BDFIREBASE.Models.Contacto>
+
+@{
+    ViewBag.Title = "Inicio";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<br />
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h4 class="text-center"><b>Lista de contactos</b></h4>
+    </div>
+    <div class="panel-body">
+        <hr />
+        <table class="table table-bordered">
+            <thead>
+                <tr class="text-center">
+                    <th>Nombre Completo</th>
+                    <th>Correo</th>
+                    <th>Telefono</th>
+                    <th>Ciudad</th>
+                    <th class="text-center" colspan="2">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.apellidoPaterno @item.apellidoMaterno @item.Nombres</td>
+                        <td>@item.Correo</td>
+                        <td>@item.Telefono</td>
+                        <td>@item.Ciudad</td>
+                        <td class="text-center">
+                            <a class="btn btn-primary btn-sm" href="@Url.Action("Editar","Mantenedor",new { idcontacto = item.IdContacto } )">Editar</a>
+                        </td>
+                        <td class="text-center">
+                            <a class="btn btn-danger btn-sm" href="@Url.Action("Eliminar","Mantenedor",new { idcontacto = item.IdContacto } )">Elminar</a>
+                        </td>
+                    </tr>
+
+                }
+            </tbody>
+
+        </table>
+        <div style="text-align: right;">
+            <a class="btn btn-success right" href="@Url.Action("Crear","Mantenedor")">Crear Nuevo Contacto</a>
+        </div>
+    </div>
+</div>
